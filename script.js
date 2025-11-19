@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('load', () => {
     var preloader = document.getElementById('preloader');
     if (preloader) {
-        preloader.style.opacity = '5';
+        preloader.style.opacity = '10';
         preloader.style.visibility = 'hidden';
     }
 });
@@ -83,4 +83,5 @@ function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
+
 
