@@ -12,8 +12,15 @@
 <body class="min-h-screen flex flex-col">
 
     <div id="preloader">
-        <span class="loader"></span>
+        <div class="loader-content">
+            <i data-lucide="feather" class="loader-icon"></i>
+            <p class="sub-text">Initializing Event Command Center...</p>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
     </div>
+
 
     <div class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4 pointer-events-none">
         <header class="pointer-events-auto w-full max-w-6xl bg-[#0f172a]/80 backdrop-blur-xl border border-slate-700/50 rounded-full shadow-2xl">
@@ -136,4 +143,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
