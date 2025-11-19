@@ -29,26 +29,20 @@
                     <i data-lucide="feather" class="text-yellow-500 w-6 h-6 mr-2 transform -rotate-45"></i>
                     <span class="font-bold text-xl text-yellow-500 tracking-tight">SHS EVENTS</span>
                 </div>
-                
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="index.html" class="px-5 py-2 rounded-full text-sm font-medium nav-pill-active">Home</a>
-                    <a href="calendar.html" class="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">Calendar</a>
+                    <a href="index.html" class="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">Home</a>
+                    <a href="calendar.html" class="px-5 py-2 rounded-full text-sm font-medium navpillactive">Calendar</a>
                     <a href="live.html" class="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">Live Updates</a>
                     <a href="about.html" class="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">About</a>
                 </div>
-
-                <div class="flex items-center space-x-4 pr-2">
-                    <a href="registration.html" class="btn-glow hidden sm:flex items-center text-white px-6 py-2 rounded-full text-sm font-bold tracking-wide">
-                        Register <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                    </a>
-                     <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-300">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
+                <div class="flex items-center pr-2">
+                    <a href="registration.html" class="btnglow hidden sm:flex items-center text-white px-6 py-2 rounded-full text-sm font-bold tracking-wide">Register</a>
+                    <button id="mobilemenubtn" class="md:hidden p-2 text-gray-300 ml-4"><i data-lucide="menu" class="w-6 h-6"></i></button>
                 </div>
             </nav>
-            <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 p-4 bg-[#0f172a] rounded-b-3xl pointer-events-auto">
-                <a href="index.html" class="block py-2 text-white font-bold">Home</a>
-                <a href="calendar.html" class="block py-2 text-gray-300">Calendar</a>
+            <div id="mobilemenu" class="hidden md:hidden border-t border-white/10 p-4 bg-[#0f172a] rounded-b-3xl pointer-events-auto">
+                <a href="index.html" class="block py-2 text-gray-300">Home</a>
+                <a href="calendar.html" class="block py-2 text-white font-bold">Calendar</a>
                 <a href="live.html" class="block py-2 text-gray-300">Live Updates</a>
                 <a href="about.html" class="block py-2 text-gray-300">About</a>
                 <a href="registration.html" class="block py-2 text-cyan-400 font-bold mt-2">Register Now</a>
@@ -173,8 +167,7 @@
             </div>
         </div>
     </main>
-
-    <footer class="bg-[#0b1120] border-t border-slate-800 pt-16 pb-8">
+ <footer class="bg-[#0b1120] border-t border-slate-800 pt-16 pb-8">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <div>
@@ -236,6 +229,7 @@
                 </div>
             </div>
         </div>
+    </footer>
 
     <script src="script.js"></script>
     
@@ -255,6 +249,4 @@
         }, 1000);
     </script>
 </body>
-
 </html>
-
