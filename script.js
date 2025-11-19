@@ -1,10 +1,10 @@
-var global_events = [
+const globalEvents = [
     { 
         id: 1, 
         title: "Annual Science Fair", 
         date: "Nov 28, 2025", 
         time: "9:00 AM - 4:00 PM",
-        category: 'academics', 
+        category: "academics", 
         location: "Gymnasium", 
         type: "register",
         img: "https://ik.imagekit.io/khfk7iqko/scinece.png",
@@ -12,7 +12,7 @@ var global_events = [
     },
     { 
         id: 2, 
-        title: 'Varsity Basketball Finals', 
+        title: "Varsity Basketball Finals", 
         date: "Tonight", 
         time: "7:00 PM",
         category: "sports", 
@@ -56,28 +56,42 @@ var global_events = [
     }
 ];
 
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', () => {
+ 
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
 
-    const mobileBtn = document.getElementById('mobilemenubtn');
-    let mobileMenu = document.getElementById('mobilemenu');
+   
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const header = document.querySelector('header'); // Select the header element
     
-    if (mobileBtn && mobileMenu) {
+    if (mobileBtn && mobileMenu && header) {
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            
+            // Toggle header shape: Pill (collapsed) <-> Card (expanded)
+            header.classList.toggle('rounded-full');
+            header.classList.toggle('rounded-2xl');
+            
+            // Optional: Make background solid when menu is open for better readability
+            header.classList.toggle('bg-[#0f172a]/80');
+            header.classList.toggle('bg-[#0f172a]');
         });
     }
 });
 
+
 window.addEventListener('load', () => {
-    var preloader = document.getElementById('preloader');
+    const preloader = document.getElementById('preloader');
     if (preloader) {
         preloader.style.opacity = '0';
         preloader.style.visibility = 'hidden';
     }
 });
+
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
