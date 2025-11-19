@@ -19,6 +19,8 @@ Online Registration System
 
 Live Command Center
 
+mobile optimization
+
 
 Technologies Used
 
@@ -29,5 +31,6 @@ CSS3
 Tailwind CSS
 
 JavaScrip
+
 
 Google Fonts
