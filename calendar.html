@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar SHS Event</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23eab308%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z%22/><line x1=%2216%22 y1=%228%22 x2=%222%22 y2=%2222%22/><line x1=%2217.5%22 y1=%2215%22 x2=%229%22 y2=%2215%22/></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <div id="preloader">
+        <span class="loader"></span>
+    </div>
+
+    <div class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4 pointer-events-none">
+        <header class="pointer-events-auto w-full max-w-6xl bg-[#0f172a]/80 backdrop-blur-xl border border-slate-700/50 rounded-full shadow-2xl">
+            <nav class="px-4 h-16 flex items-center justify-between">
+                <div class="flex items-center pl-2">
+                    <i data-lucide="feather" class="text-yellow-500 w-6 h-6 mr-2 transform -rotate-45"></i>
+                    <span class="font-bold text-xl text-yellow-500 tracking-tight">SHS Hub</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">Home</a>
+                    <a href="calendar.html" class="px-5 py-2 rounded-full text-sm font-medium navpillactive">Calendar</a>
+                    <a href="live.html" class="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">Live Updates</a>
+                    <a href="about.html" class="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">About</a>
+                </div>
+                <div class="flex items-center pr-2">
+                    <a href="registration.html" class="btnglow hidden sm:flex items-center text-white px-6 py-2 rounded-full text-sm font-bold tracking-wide">Register</a>
+                    <button id="mobilemenubtn" class="md:hidden p-2 text-gray-300 ml-4"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                </div>
+            </nav>
+            <div id="mobilemenu" class="hidden md:hidden border-t border-white/10 p-4 bg-[#0f172a] rounded-b-3xl pointer-events-auto">
+                <a href="index.html" class="block py-2 text-gray-300">Home</a>
+                <a href="calendar.html" class="block py-2 text-white font-bold">Calendar</a>
+                <a href="live.html" class="block py-2 text-gray-300">Live Updates</a>
+                <a href="about.html" class="block py-2 text-gray-300">About</a>
+                <a href="registration.html" class="block py-2 text-cyan-400 font-bold mt-2">Register Now</a>
+            </div>
+        </header>
+    </div>
+
+    <main class="container mx-auto px-4 pt-32 pb-12 flex-grow">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+            <h1 class="text-4xl font-bold text-white">Event Calendar</h1>
+            <select id="categoryfilter" class="bg-slate-800 border border-slate-600 text-white rounded-lg px-4 py-2 focus:ring-2 focus:ring-cyan-500 outline-none w-full md:w-auto">
+                <option value="all">All Categories</option>
+                <option value="sports">Sports</option>
+                <option value="academics">Academics</option>
+                <option value="arts">Arts</option>
+            </select>
+        </div>
+
+        <div class="grid gap-6" id="eventlistcontainer">
+        </div>
+    </main>
+
+    <footer class="bg-[#0b1120] border-t border-slate-800 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i data-lucide="feather" class="text-yellow-500 w-8 h-8 mr-2 transform -rotate-45"></i>
+                        <span class="font-bold text-2xl text-white">SHS EVENTS</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        The central command center for Springfield High School. Keeping students, parents, and faculty connected with real-time updates and event management.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Quick Links</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="index.html" class="footer-link transition-all duration-300 inline-block">Home Page</a></li>
+                        <li><a href="calendar.html" class="footer-link transition-all duration-300 inline-block">Event Calendar</a></li>
+                        <li><a href="live.html" class="footer-link transition-all duration-300 inline-block">Live Coverage</a></li>
+                        <li><a href="registration.html" class="footer-link transition-all duration-300 inline-block">Registration</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Resources</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" class="footer-link transition-all duration-300 inline-block">School Portal</a></li>
+                        <li><a href="#" class="footer-link transition-all duration-300 inline-block">Faculty Directory</a></li>
+                        <li><a href="#" class="footer-link transition-all duration-300 inline-block">Student Handbook</a></li>
+                        <li><a href="#" class="footer-link transition-all duration-300 inline-block">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Stay Connected</h3>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#" class="bg-slate-800 p-3 rounded-full text-gray-400 hover:bg-blue-600 hover:text-white transition-all duration-300 footer-social-icon">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="bg-slate-800 p-3 rounded-full text-gray-400 hover:bg-sky-500 hover:text-white transition-all duration-300 footer-social-icon">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="bg-slate-800 p-3 rounded-full text-gray-400 hover:bg-pink-600 hover:text-white transition-all duration-300 footer-social-icon">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <p class="text-xs text-gray-500">Subscribe for updates:</p>
+                    <div class="mt-2 flex">
+                        <input type="email" placeholder="Email address" class="bg-slate-900 border border-slate-700 text-white text-sm rounded-l-lg px-4 py-2 outline-none focus:border-cyan-500 w-full">
+                        <button class="bg-cyan-600 text-white px-4 py-2 rounded-r-lg hover:bg-cyan-500 transition"><i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 Springfield High School. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const container = document.getElementById('eventlistcontainer');
+        const filter = document.getElementById('categoryfilter');
+
+        function renderEvents(category) {
+            container.innerHTML = '';
+            const filtered = category === 'all' ? global_events : global_events.filter(e => e.category === category);
+            
+            if(filtered.length === 0) {
+                container.innerHTML = '<p class="text-gray-400">No events found.</p>';
+                return;
+            }
+
+            filtered.forEach(e => {
+                let btnHtml = '';
+                if(e.type === 'live') {
+                    btnHtml = `<a href="live.html" class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 text-center animate-pulse w-full md:w-auto block">Watch Live</a>`;
+                } else {
+                    btnHtml = `
+                        <a href="eventdetails.html?id=${e.id}" class="bg-slate-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-slate-600 text-center w-full md:w-auto block">Details</a>
+                        <a href="registration.html?event=${e.id}" class="btnglow text-white px-6 py-2 rounded-lg font-semibold text-center w-full md:w-auto block">Register</a>
+                    `;
+                }
+
+                const html = `
+                <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-center hover:border-cyan-500/30 transition backdrop-blur-sm">
+                    <img src="${e.img}" class="w-full md:w-48 h-32 object-cover rounded-xl">
+                    <div class="flex-grow text-center md:text-left w-full">
+                        <span class="text-xs font-bold text-cyan-400 uppercase tracking-wide">${e.category}</span>
+                        <h3 class="text-2xl font-bold text-white mt-1">${e.title}</h3>
+                        <p class="text-gray-400 mt-1 flex items-center justify-center md:justify-start gap-4">
+                            <span><i data-lucide="calendar" class="w-4 h-4 inline mr-1"></i> ${e.date}</span>
+                            <span><i data-lucide="map-pin" class="w-4 h-4 inline mr-1"></i> ${e.location}</span>
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-2 w-full md:w-auto">
+                        ${btnHtml}
+                    </div>
+                </div>`;
+                container.innerHTML += html;
+            });
+            lucide.createIcons();
+        }
+
+        renderEvents('all');
+        filter.addEventListener('change', (e) => renderEvents(e.target.value));
+    </script>
+</body>
+</html>

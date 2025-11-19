@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Springfield High Events - Home</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23eab308%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z%22/><line x1=%2216%22 y1=%228%22 x2=%222%22 y2=%2222%22/><line x1=%2217.5%22 y1=%2215%22 x2=%229%22 y2=%2215%22/></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <div id="preloader">
+        <div class="loader-content">
+            <i data-lucide="feather" class="loader-icon"></i>
+            <h1 class="welcome-text">Welcome to Springfield High</h1>
+            <p class="sub-text">Initializing Event Command Center...</p>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4 pointer-events-none">
+        <header class="pointer-events-auto w-full max-w-6xl bg-[#0f172a]/80 backdrop-blur-xl border border-slate-700/50 rounded-full shadow-2xl">
+            <nav class="px-4 h-16 flex items-center justify-between">
+                <div class="flex items-center pl-2">
+                    <i data-lucide="feather" class="text-yellow-500 w-6 h-6 mr-2 transform -rotate-45"></i>
+                    <span class="font-bold text-xl text-yellow-500 tracking-tight">SHS EVENTS</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="px-5 py-2 rounded-full text-sm font-medium nav-pill-active">Home</a>
+                    <a href="calendar.html" class="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">Calendar</a>
+                    <a href="live.html" class="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">Live Updates</a>
+                    <a href="about.html" class="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">About</a>
+                </div>
+
+                <div class="flex items-center space-x-4 pr-2">
+                    <a href="registration.html" class="btn-glow hidden sm:flex items-center text-white px-6 py-2 rounded-full text-sm font-bold tracking-wide">
+                        Register <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                     <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-300">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </nav>
+            <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 p-4 bg-[#0f172a] rounded-b-3xl pointer-events-auto">
+                <a href="index.html" class="block py-2 text-white font-bold">Home</a>
+                <a href="calendar.html" class="block py-2 text-gray-300">Calendar</a>
+                <a href="live.html" class="block py-2 text-gray-300">Live Updates</a>
+                <a href="about.html" class="block py-2 text-gray-300">About</a>
+                <a href="registration.html" class="block py-2 text-cyan-400 font-bold mt-2">Register Now</a>
+            </div>
+        </header>
+    </div>
+
+    <main class="container mx-auto px-4 pt-32 pb-12 flex-grow">
+        
+        <div class="bg-slate-800/50 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl md:flex mb-12 backdrop-blur-sm relative">
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <img src="assets/school.png" class="w-full md:w-1/2 h-80 md:h-auto object-cover grayscale hover:grayscale-0 transition duration-700">
+            
+            <div class="p-8 md:p-12 flex flex-col justify-center relative z-10">
+                <span class="text-cyan-400 font-bold tracking-wider text-xs uppercase mb-2 flex items-center">
+                    <span class="w-2 h-2 bg-cyan-400 rounded-full mr-2 animate-pulse"></span> Official Command Center
+                </span>
+                
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+                    Welcome to <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Springfield High</span><br>
+                    Event Page
+                </h1>
+                
+                <p class="text-gray-300 mb-8 text-lg border-l-4 border-yellow-500 pl-4 italic">
+                    "Empowering students through innovation, community, and excellence."
+                </p>
+                
+                <div class="bg-slate-900/60 rounded-xl p-4 border border-slate-700/50">
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mb-2 text-center">Next Event: Annual Science Fair Begins In</p>
+                    <div class="grid grid-cols-4 gap-2 text-center">
+                        <div><div id="days" class="text-2xl font-bold text-white">08</div><div class="text-[10px] text-gray-500">DAYS</div></div>
+                        <div><div id="hours" class="text-2xl font-bold text-white">12</div><div class="text-[10px] text-gray-500">HRS</div></div>
+                        <div><div id="mins" class="text-2xl font-bold text-white">45</div><div class="text-[10px] text-gray-500">MINS</div></div>
+                        <div><div id="secs" class="text-2xl font-bold text-cyan-400">22</div><div class="text-[10px] text-gray-500">SECS</div></div>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mt-8">
+                    <a href="calendar.html" class="btn-glow text-white px-6 py-3 rounded-xl font-bold text-center flex-grow md:flex-grow-0">
+                        Browse Events
+                    </a>
+                    <a href="#announcements" class="px-6 py-3 rounded-xl font-bold text-gray-300 border border-slate-600 hover:bg-white/5 transition text-center flex-grow md:flex-grow-0">
+                        Announcements
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="col-span-2 bg-slate-800/50 border border-slate-700 rounded-3xl p-8 backdrop-blur-sm hover:border-slate-600 transition">
+                <div class="flex flex-col sm:flex-row items-start gap-6">
+                    <img src="assets/principal.png" class="w-24 h-24 rounded-full border-4 border-slate-700 shadow-lg">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-2">A Message from Sir Asela Ransinghe
+                        <p class="text-gray-400 leading-relaxed">
+                            "We are thrilled to launch this digital hub. It allows parents and students to stay synchronized with our vibrant campus life, from varsity games to academic debates. This is your gateway to everything happening at Springfield High."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-blue-900 to-slate-900 border border-slate-700 rounded-3xl p-8 flex flex-col justify-center text-center">
+                <i data-lucide="award" class="w-12 h-12 text-yellow-400 mx-auto mb-4"></i>
+                <h3 class="text-white font-bold text-xl mb-4">Recent Achievements</h3>
+                <ul class="space-y-3 text-gray-300 text-sm">
+                    <li class="border-b border-white/10 pb-2 flex items-center justify-center gap-2">
+                        <span class="text-yellow-400"></span> State Basketball Champions
+                    </li>
+                    <li class="border-b border-white/10 pb-2 flex items-center justify-center gap-2">
+                        <span class="text-cyan-400"></span> National Science Gold Medal
+                    </li>
+                    <li class="flex items-center justify-center gap-2">
+                        <span class="text-pink-400"></span> Arts Excellence Award '24
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="announcements" class="grid md:grid-cols-2 gap-8">
+            <div class="bg-slate-800/50 border border-slate-700 rounded-3xl p-8 backdrop-blur-sm">
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center"><i data-lucide="bell" class="mr-3 text-yellow-500"></i>Announcements</h2>
+                <div class="space-y-4">
+                    <div class="p-4 bg-slate-700/30 rounded-xl border-l-4 border-cyan-500 hover:bg-slate-700/50 transition">
+                        <div class="flex justify-between mb-1">
+                            <h3 class="font-bold text-white">Welcome Back!</h3>
+                            <span class="text-xs text-gray-500">Today</span>
+                        </div>
+                        <p class="text-sm text-gray-400">The new semester begins. Check the calendar for updated schedules and classroom assignments.</p>
+                    </div>
+                    <div class="p-4 bg-slate-700/30 rounded-xl border-l-4 border-purple-500 hover:bg-slate-700/50 transition">
+                        <div class="flex justify-between mb-1">
+                            <h3 class="font-bold text-white">Library Hours</h3>
+                            <span class="text-xs text-gray-500">Yesterday</span>
+                        </div>
+                        <p class="text-sm text-gray-400">The library will now remain open until 6 PM on weekdays for study sessions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-800/50 border border-slate-700 rounded-3xl p-8 backdrop-blur-sm">
+                <h2 class="text-2xl font-bold text-white mb-6">Quick Access</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="calendar.html" class="p-4 bg-slate-700/50 rounded-xl hover:bg-slate-700 transition text-center border border-slate-600/30 group">
+                        <i data-lucide="calendar" class="w-8 h-8 text-cyan-400 mx-auto mb-2 group-hover:scale-110 transition"></i>
+                        <span class="font-bold text-white block">Full Calendar</span>
+                    </a>
+                    <a href="live.html" class="p-4 bg-slate-700/50 rounded-xl hover:bg-slate-700 transition text-center border border-slate-600/30 group">
+                        <i data-lucide="video" class="w-8 h-8 text-red-500 mx-auto mb-2 group-hover:scale-110 transition"></i>
+                        <span class="font-bold text-white block">Live Stream</span>
+                    </a>
+                    <a href="registration.html" class="p-4 bg-slate-700/50 rounded-xl hover:bg-slate-700 transition text-center border border-slate-600/30 group">
+                        <i data-lucide="ticket" class="w-8 h-8 text-yellow-400 mx-auto mb-2 group-hover:scale-110 transition"></i>
+                        <span class="font-bold text-white block">Get Tickets</span>
+                    </a>
+                    <a href="about.html" class="p-4 bg-slate-700/50 rounded-xl hover:bg-slate-700 transition text-center border border-slate-600/30 group">
+                        <i data-lucide="info" class="w-8 h-8 text-green-400 mx-auto mb-2 group-hover:scale-110 transition"></i>
+                        <span class="font-bold text-white block">School Info</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#0b1120] border-t border-slate-800 pt-16 pb-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i data-lucide="feather" class="text-yellow-500 w-8 h-8 mr-2 transform -rotate-45"></i>
+                        <span class="font-bold text-2xl text-white">SHS EVENTS</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        The central command center for Springfield High School. Keeping students, parents, and faculty connected with real-time updates and event management.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Resources</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" class="footer-link transition-all duration-300 inline-block">School Portal</a></li>
+                        <li><a href="#" class="footer-link transition-all duration-300 inline-block">Faculty Directory</a></li>
+                        <li><a href="#" class="footer-link transition-all duration-300 inline-block">Student Handbook</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Contact Us</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li>123 School Lane, Springfield</li>
+                        <li>(555) 123-4567</li>
+                        <li>admin@springfieldhigh.edu</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Social</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white footer-social-icon"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white footer-social-icon"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white footer-social-icon"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-gray-500 text-sm">
+                &copy; 2025 Springfield High School. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // Page Specific Logic: Countdown
+        let days = 8, hours = 12, mins = 45, secs = 22;
+        setInterval(() => {
+            secs--;
+            if(secs < 0) { secs = 59; mins--; }
+            if(mins < 0) { mins = 59; hours--; }
+            if(hours < 0) { hours = 23; days--; }
+            
+            document.getElementById('days').innerText = days < 10 ? '0'+days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0'+hours : hours;
+            document.getElementById('mins').innerText = mins < 10 ? '0'+mins : mins;
+            document.getElementById('secs').innerText = secs < 10 ? '0'+secs : secs;
+        }, 1000);
+    </script>
+</body>
+</html>
