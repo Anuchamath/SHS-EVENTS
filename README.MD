@@ -1,7 +1,8 @@
 
 
 Name = S.K Anuchamath Sathsarae
-School = St.Sylvester's College Kandy
+
+School = St.Sylvester's College 
 
 Project Overview
 
@@ -34,3 +35,4 @@ JavaScrip
 
 
 Google Fonts
+
