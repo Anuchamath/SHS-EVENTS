@@ -36,19 +36,5 @@ JavaScrip
 
 Google Fonts
 
-Project Structure
 
-The project consists of the following files:
-
-school-event
-│
-├── index.html           # Landing page with hero section & countdown
-├── calendar.html        # Event listing with category filters
-├── live.html            # Live stream simulation & commentary
-├── registration.html    # Event sign-up form
-├── about.html           # School information & team details
-├── event_details.html   # Template for individual event info
-├── style.css            # Global styles, animations, and preloader
-├── script.js            # Shared logic, mock database, and interactions
-└── README.md            # Project documentation
 
